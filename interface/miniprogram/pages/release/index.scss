@@ -1,0 +1,176 @@
+@import "../../app.scss";
+$backgroundColor: #fddd2d;
+
+.userReleaseBox {
+    .userReleaseSetup {
+        @include flexBoxLayout;
+        background-color: $backgroundColor;
+        width: 100%;
+        height: 100rpx;
+        flex-direction: row;
+
+        >view {
+            @include flexBoxLayout;
+            width: 35%;
+            height: 60%;
+            font-size: 23rpx;
+            border: 1rpx solid #323232;
+        }
+
+        >view:nth-child(1) {
+            border-radius: 15rpx 0 0 15rpx;
+        }
+
+        >view:nth-child(2) {
+            border-radius: 0 15rpx 15rpx 0;
+        }
+
+        .choseSetup {
+            background-color: #323232;
+            color: $backgroundColor;
+        }
+
+        .noChoseSetup {
+            background-color: $backgroundColor;
+            color: #323232;
+        }
+    }
+
+    .userReleaseClassificationBox {
+        @include flexBoxLayout;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        >view {
+            width: 25%;
+            height: 170rpx;
+            @include flexBoxLayout;
+
+            >view:nth-child(1) {
+                @include flexBoxLayout;
+                width: 100%;
+                height: 70%;
+
+
+                >view {
+                    @include flexBoxLayout;
+                    background-color: #f6f6f6;
+                    width: 100rpx;
+                    height: 100rpx;
+                    border-radius: 50%;
+                    margin-top: 20rpx;
+
+                    >image {
+                        width: 30rpx;
+                        height: 30rpx;
+                        width: 70rpx;
+                        height: 70rpx;
+                    }
+                }
+            }
+
+            >view:nth-child(2) {
+                @include flexBoxLayout;
+                width: 100%;
+                height: 30%;
+                font-size: 23rpx;
+            }
+        }
+    }
+
+    .submitInputBox {
+        @include flexBoxLayout;
+        width: 100%;
+        height: 33vh;
+        position: fixed;
+        bottom: 0;
+
+        .submitInputText {
+            @include flexBoxLayout;
+            height: 20%;
+            width: 100%;
+            flex-direction: row;
+            border-top: 1px solid #D3D3D3;
+            border-bottom: 1px solid #D3D3D3;
+
+            >view {
+                height: 100%;
+            }
+
+            >view:nth-child(1) {
+                @include flexBoxLayout;
+                width: 15%;
+                font-size: 27rpx;
+            }
+
+            >view:nth-child(2) {
+                width: 30%;
+                font-size: 27rpx;
+
+                >input {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            >view:nth-child(3) {
+                @include flexBoxLayout;
+                align-items: flex-end;
+                flex: 1;
+                font-size: 40rpx;
+                padding-right: 20rpx;
+            }
+        }
+
+        .submitInputImport {
+            flex: 1;
+            @include flexBoxLayout;
+            flex-direction: row;
+            width: 100%;
+
+            >view {
+                height: 100%;
+            }
+
+            >view:nth-child(1) {
+                @include flexBoxLayout;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 75%;
+
+                >view {
+                    @include flexBoxLayout;
+                    width: 33.3%;
+                    height: 25%;
+                    border-bottom: 1px solid #D3D3D3;
+                    border-right: 1px solid #D3D3D3;
+                }
+                .dataChose{
+                  @include flexBoxLayout;
+                  width: 33.3%;
+                  height: 25%;
+                  border-bottom: 1px solid #D3D3D3;
+                  border-right: 1px solid #D3D3D3;
+                }
+            }
+
+            >view:nth-child(2) {
+                @include flexBoxLayout;
+                flex: 1;
+
+                >view {
+                    @include flexBoxLayout;
+                    width: 100%;
+                    height: 25%;
+                    border-bottom: 1px solid #D3D3D3;
+                    border-right: 1px solid #D3D3D3;
+                }
+            }
+
+            .hoverClass {
+                background-color: rgba(192, 192, 192, 0.5);
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "TopTabbar": "../../components/TopTabbar/index",
+    "noDataPrompt": "../../components/noDataPrompt/index"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "TopTabbar": "../../components/TopTabbar/index",
+    "setBudgetInput": "../../components/setBudgetInput/index",
+    "addClassification": "../../components/addClassification/index",
+    "noDataPrompt": "../../components/noDataPrompt/index"
+  }
+}

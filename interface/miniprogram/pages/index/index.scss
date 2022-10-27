@@ -1,0 +1,185 @@
+@import "../../app.scss";
+
+.timebarBox {
+  @include flexBoxLayout;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #fddd2d;
+  height: 130rpx;
+  width: 100%;
+  position: fixed;
+
+  .pickerTime {
+    height: 130rpx;
+    width: 170rpx;
+
+    >view {
+      padding-left: 30rpx;
+    }
+
+    >view:nth-child(1) {
+      width: 100%;
+      height: 40%;
+      font-size: 23rpx;
+      color: grey;
+      font-weight: bolder;
+    }
+
+    >view:nth-child(2) {
+      @include flexBoxLayout;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      width: 100%;
+      height: 40%;
+      font-size: 40rpx;
+    }
+  }
+
+  >view {
+    height: 100%;
+    width: 35%;
+
+    >view {
+      padding-left: 30rpx;
+    }
+
+    >view:nth-child(1) {
+      width: 100%;
+      height: 40%;
+      font-size: 23rpx;
+      color: grey;
+      font-weight: bolder;
+    }
+
+    >view:nth-child(2) {
+      @include flexBoxLayout;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      width: 100%;
+      height: 40%;
+      font-size: 40rpx;
+    }
+  }
+
+  >view:nth-child(1) {
+    width: 25%;
+
+    >view:nth-child(2) {
+      border-right: 1rpx solid black;
+    }
+  }
+
+  >view:nth-child(2) {
+    >view {
+      padding-left: 90rpx;
+    }
+  }
+
+  >view:nth-child(3) {
+    flex: 1;
+
+    >view {
+      padding-left: 90rpx;
+    }
+  }
+
+
+}
+
+.billDataBox {
+  width: 100%;
+  padding-top: 130rpx;
+
+  .billDatapart {
+
+    >view:nth-child(1) {
+      @include flexBoxLayout;
+      flex-direction: row;
+      height: 60rpx;
+      justify-content: flex-start;
+      font-size: 23rpx;
+      border-bottom: 1rpx solid rgba(192, 192, 192, 0.5);
+      color: grey;
+
+      >view:nth-child(1) {
+        width: 30%;
+        padding-left: 30rpx;
+      }
+
+      >view:nth-child(2) {
+        @include flexBoxLayout;
+        width: 50%;
+        align-items: flex-end;
+        padding-right: 70rpx;
+      }
+
+      .only {
+        flex: 1;
+        @include flexBoxLayout;
+        width: 50%;
+        height: 100%;
+        align-items: flex-end;
+        padding-right: 69rpx;
+      }
+
+      .none {
+        display: none !important
+      }
+    }
+
+    >view:nth-child(n+2) {
+      @include flexBoxLayout;
+      flex-direction: row;
+      height: 120rpx;
+
+      >view {
+        height: 100%;
+      }
+
+      >view:nth-child(1) {
+        width: 18%;
+        @include flexBoxLayout;
+
+        >view {
+          @include flexBoxLayout;
+          background-color: #f5f5f5;
+          width: 60rpx;
+          height: 60rpx;
+          border-radius: 50%;
+
+          >image {
+            width: 70%;
+            height: 70%;
+          }
+        }
+      }
+
+      >view:nth-child(2) {
+        @include flexBoxLayout;
+        font-size: 27rpx;
+        width: 20%;
+        align-items: flex-start;
+        padding-left: 15rpx;
+        font-weight: bolder;
+      }
+
+      >view:nth-child(3) {
+        flex: 1;
+        @include flexBoxLayout;
+        align-items: flex-end;
+        padding-right: 30rpx;
+        font-size: 27rpx;
+      }
+    }
+
+    >view:nth-child(n+3) {
+
+      >view:nth-child(2),
+      view:nth-child(3) {
+        border-top: 1rpx solid rgba(192, 192, 192, 0.5);
+      }
+    }
+  }
+}

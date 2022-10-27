@@ -1,0 +1,5 @@
+<!--components/releaseButton/index.wxml-->
+<View class="releaseBtnBox" catchtap="userRelease">
+    <View ><image src="../../resource/image/static/releaseSymbol.png" alt=""/></View>
+    <View  style="color: {{color}}" ><text>记账</text></View>
+  </View>

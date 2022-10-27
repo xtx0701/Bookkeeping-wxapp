@@ -1,0 +1,86 @@
+<TopTabbar  text="分类" />
+<setBudgetInput wx:if="{{isSetupBudget}}" bind:changeSetupBudgetAgeHandler="changeSetupBudgetAge" bind:changUserBudgetAgeHandler="changUserBudgetAge" />
+<addClassification wx:if="{{isAddClassification}}" bind:changAddClassificationAgeHandler="changAddClassificationAge" bind:changeUserClassificationAgeHandler="changeUserClassificationAge" typeName="{{addClassificationName}}" />
+<noDataPrompt wx:if="{{condition}}" />
+<view class="addClassificationButton" bindtap="addUserClassificationbudget" >
+    +添加分类预算
+</view>
+<view class="userBillBudgetData" style="margin-top:{{boxHeight}}px" >
+    <view>
+        <view>九月总预算</view>
+        <view bindtap="compileUserBudget" >编辑</view>
+    </view>
+
+    <view class="partTwo" >
+        <view class="userBillBudgetImage">
+        <view>
+            <view class="left" >
+                <view style="transform: rotate(-{{leftImageRotate}}deg);background-color:{{leftImageRotate==='180'?'#e6e8e7':'#fddd2d'}}" ></view>
+            </view>
+            <view class="right" >
+                <view style="transform: rotate(-{{rightImageRotate}}deg);"></view>
+            </view>
+            <view class="userBillBudgetMessage">
+                 <text>剩余</text>
+                <text>{{userRemainderPercent}}%</text>
+            </view>
+        </view>
+        </view>
+        <view class="userBillBudgetDetail">
+             <view>
+                <view><text>剩余预算:</text></view>
+                <view>{{userRemainder}}</view>
+            </view>
+            <view>
+                 <view><text>本月预算:</text></view>
+                 <view>{{userBudget}}</view>
+            </view>
+            <view>
+                <view><text>本月支出:</text></view>
+                <view>{{userExpend}}</view>
+            </view>
+        </view>         
+    </view>
+
+    <view></view>
+</view>
+
+<view class="userBillBudgetData" wx:for="{{classificationData}}" wx:key="typeName" wx:if="{{!noDataPrompt}}" >
+    <view>
+        <view>{{item.typeName}}</view>
+        <view bindtap="deleteUserClassification" data-type="{{item.typeName}}" >删除</view>
+    </view>
+
+    <view class="partTwo" >
+        <view class="userBillBudgetImage">
+        <view>
+            <view class="left" >
+                <view style="transform: rotate(-{{item.leftImageRotate}}deg);background-color:{{item.leftImageRotate==='180'?'#e6e8e7':'#fddd2d'}}" ></view>
+            </view>
+            <view class="right" >
+                <view style="transform: rotate(-{{item.rightImageRotate}}deg);"></view>
+            </view>
+            <view class="userBillBudgetMessage">
+                 <text>剩余</text>
+                <text>{{item.remainderPercent}}%</text>
+            </view>
+        </view>
+        </view>
+        <view class="userBillBudgetDetail">
+             <view>
+                <view><text>剩余预算:</text></view>
+                <view>{{item.remainder}}</view>
+            </view>
+            <view>
+                 <view><text>本月预算:</text></view>
+                 <view>{{item.budget}}</view>
+            </view>
+            <view>
+                <view><text>本月支出:</text></view>
+                <view>{{item.expend}}</view>
+            </view>
+        </view>         
+    </view>
+
+    <view></view>
+</view>

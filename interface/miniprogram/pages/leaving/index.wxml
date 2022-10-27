@@ -1,0 +1,10 @@
+<TopTabbar  text="留言" />
+<view style="margin-top:{{boxHeight}}px;" class="leavingBox">
+    <form action="">
+        <textarea name="" id="" cols="30" rows="10" class="leavingInput" bindinput="catchUserText" auto-focus></textarea>
+    </form>
+
+    <view bindtap="submitUserText" > 
+        提交
+    </view>
+</view>

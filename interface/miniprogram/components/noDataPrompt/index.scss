@@ -1,0 +1,28 @@
+@import "../../app.scss";
+
+.noDataPromptBox {
+    @include flexBoxLayout;
+    position: fixed;
+    width: 200rpx;
+    height: 200rpx;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    >view:nth-child(1) {
+        @include flexBoxLayout;
+        width: 100%;
+        height: 70%;
+
+        >image {
+            width: 100rpx;
+            height: 100rpx;
+        }
+    }
+
+    >view:nth-child(2) {
+        flex: 1;
+        font-size: 23rpx;
+        color: grey;
+    }
+}

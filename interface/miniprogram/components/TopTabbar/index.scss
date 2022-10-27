@@ -1,0 +1,37 @@
+/* components/TopTabbar/index.wxss */
+.topTabbarBox {
+  background-color: #fddd2d;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .topTabbarText {
+    font-weight: bolder;
+    font-size: 37rpx;
+  }
+
+  ;
+
+  .imageBox {
+    position: absolute;
+    background-color: rgba(252, 252, 252, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+
+    image {
+      width: 80%;
+      height: 80%;
+    }
+
+    ;
+  }
+
+  ;
+}

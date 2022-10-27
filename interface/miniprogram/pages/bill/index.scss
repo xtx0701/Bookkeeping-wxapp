@@ -1,0 +1,164 @@
+@import "../../app.scss";
+$backgroundColor: #fddd2d;
+
+.addClassificationButton {
+    @include flexBoxLayout;
+    position: fixed;
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 20rpx;
+    top: 80%;
+    left: 70%;
+    background-color: $backgroundColor;
+    font-size: 27rpx;
+    font-weight: bolder;
+}
+
+.userBillBudgetData {
+    @include flexBoxLayout;
+
+    >view:nth-child(1) {
+        @include flexBoxLayout;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        height: 60rpx;
+        font-size: 23rpx;
+        font-weight: bolder;
+
+        >view:nth-child(1) {
+            @include flexBoxLayout;
+            width: 30%;
+            height: 100%;
+        }
+
+        >view:nth-child(2) {
+            @include flexBoxLayout;
+            align-items: flex-end;
+            padding-right: 40rpx;
+            flex: 1;
+            height: 100%
+        }
+    }
+
+    >view:nth-child(2) {
+        @include flexBoxLayout;
+        width: 100%;
+        height: 230rpx;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        .userBillBudgetImage {
+            @include flexBoxLayout;
+            width: 35%;
+            height: 100%;
+            flex-direction: row;
+            position: relative;
+
+
+            >view {
+                @include flexBoxLayout;
+                flex-direction: row;
+                width: 206rpx;
+                height: 90%;
+                border-radius: 50%;
+                background-color: #e6e8e7;
+
+                >view {
+                    width: 50%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .left {
+                    border-radius: 100rpx 0 0 100rpx;
+                    overflow: hidden;
+
+                    >view {
+                        @extend.left;
+                        background-color: $backgroundColor;
+                        width: 100%;
+                        height: 100%;
+                        transform-origin: 103.5rpx 104rpx;
+                    }
+                }
+
+                .right {
+                    border-radius: 0 100rpx 100rpx 0;
+                    overflow: hidden;
+                    position: relative;
+                    right: 1rpx;
+
+                    >view {
+                        @extend.right;
+                        background-color: $backgroundColor;
+                        width: 100%;
+                        height: 100%;
+                        transform-origin: 0 104rpx;
+                    }
+                }
+            }
+
+
+
+            .userBillBudgetMessage {
+                @include flexBoxLayout;
+                background-color: white;
+                width: 170rpx;
+                height: 170rpx;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 10;
+
+                >text:nth-child(1) {
+                    font-size: 25rpx;
+                    color: grey;
+                    margin-bottom: 15rpx;
+                }
+
+                >text:nth-child(2) {
+                    font-size: 40rpx;
+                }
+            }
+        }
+
+        .userBillBudgetDetail {
+            @include flexBoxLayout;
+            width: 50%;
+            height: 80%;
+            margin-left: 75rpx;
+
+            >view {
+                @include flexBoxLayout;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 100%;
+
+
+                >view:nth-child(2) {
+                    flex: 1;
+                    @include flexBoxLayout;
+                    align-items: flex-end;
+                }
+            }
+
+            >view:nth-child(1) {
+                height: 40%;
+                font-size: 30rpx;
+                border-bottom: 1px solid #e6e8e7;
+            }
+
+            >view:nth-child(2),
+            view:nth-child(3) {
+                height: 30%;
+                font-size: 21rpx;
+            }
+        }
+    }
+
+    >view:nth-child(3) {
+        background-color: #f1f1f1;
+        width: 100%;
+        height: 20rpx;
+    }
+}

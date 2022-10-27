@@ -1,0 +1,7 @@
+<!--components/TopTabbar/index.wxml-->
+<view style="height: {{boxHeight}}px" class="topTabbarBox"  >
+  <text class="topTabbarText" style="margin-top: {{topTabbarTextMarginTop}}px" >{{text}}</text>
+  <view class="imageBox" style="top:{{imageMarginTop}}px;left:{{imageMarginLeft}}px;height:{{imageBoxHeight}}px ;width: {{imageBoxHeight}}px;" bindtap="goBackHome" >
+    <image src="../../resource/image/static/house.png" />
+  </view>
+</view>

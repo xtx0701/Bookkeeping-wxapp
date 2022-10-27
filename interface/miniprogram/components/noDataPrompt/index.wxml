@@ -1,0 +1,4 @@
+<view class="noDataPromptBox" >
+    <view><image src="../../resource/image/static/noDataPrompt.png" /></view>
+    <view>暂无数据</view>
+</view>

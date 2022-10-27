@@ -1,0 +1,10 @@
+<!--custom-tab-bar/index.wxml-->
+<!-- 自定义tabber栏目 -->
+<View class="tabbarBox">
+  <View class="tabbarContent" wx:for="{{list}}" wx:key="index" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <View class="tabbarIcon" ><image src="{{selected===index?item.selectedIconPath:item.iconPath}}" alt=""/></View>
+    <View class="tabbarText" style="color: {{selected === index ? selectedColor : color}}" ><text>{{item.text}}</text></View>
+  </View>
+  <!-- 引入记账按钮组件 -->
+  <ReleaseButton/>
+</View>

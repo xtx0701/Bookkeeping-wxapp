@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/chart/index",
+    "pages/bill/index",
+    "pages/mine/index",
+    "custom-tab-bar/index",
+    "components/ReleaseButton/index",
+    "pages/release/index",
+    "components/TopTabbar/index",
+    "components/setBudgetInput/index",
+    "pages/releaseDemo/index",
+    "components/noDataPrompt/index",
+    "components/addClassification/index",
+    "pages/leaving/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "backgroundColor": "#f6f6f6"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8a8a8a",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "iconPath": "./resource/image/static/index.png",
+        "selectedIconPath": "./resource/image/static/index_selected.png",
+        "pagePath": "pages/index/index",
+        "text": "明细"
+      },
+      {
+        "iconPath": "./resource/image/static/chart.png",
+        "selectedIconPath": "./resource/image/static/chart_selected.png",
+        "pagePath": "pages/chart/index",
+        "text": "图表"
+      },
+      {
+        "iconPath": "./resource/image/static/userClockButtonImage.png",
+        "selectedIconPath": "./resource/image/static/userClockButtonImage.png",
+        "pagePath": "pages/releaseDemo/index",
+        "text": "覆盖"
+      },
+      {
+        "iconPath": "./resource/image/static/bill.png",
+        "selectedIconPath": "./resource/image/static/bill.png",
+        "pagePath": "pages/bill/index",
+        "text": "账单"
+      },
+      {
+        "iconPath": "./resource/image/static/mine.png",
+        "selectedIconPath": "./resource/image/static/mine_selected.png",
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

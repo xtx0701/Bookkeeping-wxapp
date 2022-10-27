@@ -1,0 +1,56 @@
+<TopTabbar text="记账" />
+<view class="userReleaseBox" style="margin-top:{{boxHeight}}px"  >
+    <view class="userReleaseSetup" >
+        <view class="{{isExpend?'choseSetup':'noChoseSetup'}}" bindtap="{{!isExpend?'changeSetupAge':''}}" >支出</view>
+        <view class="{{!isExpend?'choseSetup':'noChoseSetup'}}" bindtap="{{isExpend?'changeSetupAge':''}}" >收入</view>
+    </view>
+    <view class="userReleaseClassificationBox" wx:if="{{isExpend}}" bindtap="closeSubmitInput" >
+        <view wx:for="{{expendClassification}}" wx:key="{{item.name}}">
+            <view data-name="{{item.name}}" data-type="{{item.type}}" data-index="{{index}}" catchtap="choseClassification" >
+                <view style="background-color:{{item.isChose?'#fddd2d':'#f6f6f6'}}" >
+                    <image src="{{item.image}}" />
+                </view>
+            </view>
+             <view>
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+
+    <view class="userReleaseClassificationBox" wx:else bindtap="closeSubmitInput" >
+        <view wx:for="{{incomeClassification}}" wx:key="{{item.name}}">
+            <view data-name="{{item.name}}" data-type="{{item.type}}" data-index="{{index}}" catchtap="choseClassification" >
+                <view style="background-color:{{item.isChose?'#fddd2d':'#f6f6f6'}}" >
+                    <image src="{{item.image}}" />
+                </view>
+            </view>
+             <view>
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+
+    <view class="submitInputBox" wx:if="{{isSubmit}}" >
+        <view class="submitInputText">
+            <view>备注:</view>
+            <view><input type="text" bindinput="getSubmitInputText" /></view>
+            <view>{{submitNum}}</view>
+        </view>
+        <view class="submitInputImport" >
+            <view>
+                <view wx:for="{{numArr}}" data-value="{{item}}" hover-class="hoverClass" bindtap="changeSubmitNum" >
+                    {{item}}
+                </view>
+                <view hover-class="hoverClass" bindtap="addDecimalPoint" >.</view>
+                <view hover-class="hoverClass" data-value="{{0}}" >0</view>
+                <view hover-class="hoverClass" bindtap="deleteSubmitNum" >x</view>
+            </view>
+            <view>
+                <view><picker mode="date" bindchange="dataPickerHandler" ><view >{{datePickerData}}</view></picker></view>
+                <view hover-class="hoverClass" bindtap="addOperationSymbol" data-symbol="{{'+'}}" >+</view>
+                <view hover-class="hoverClass" bindtap="addOperationSymbol" data-symbol="{{'-'}}">-</view>
+                <view style="background-color:#fddd2d" bindtap="finshButtonHandler" >{{isCompute?"=":"完成"}}</view>
+            </view>
+        </view>
+    </view>
+</view>

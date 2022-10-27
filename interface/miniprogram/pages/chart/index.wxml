@@ -1,0 +1,65 @@
+<TopTabbar  text="图表" />
+<view style="margin-top:{{boxHeight}}px" >
+    <view class="classificationBox" >
+        <view>
+            <view class="{{isExpend?'choseSetup':'noChoseSetup'}}" bindtap="{{!isExpend? 'changeIsExpendAge':''}}" >支出</view>
+             <view class="{{!isExpend?'choseSetup':'noChoseSetup'}}" bindtap="{{isExpend? 'changeIsExpendAge':''}}" >收入</view>
+        </view>
+        <view>
+            <view class="{{timeClass===0?'choseSetup':'noChoseSetup'}}" bindtap="changeWeekAge" >周</view>
+            <view class="{{timeClass===1?'choseSetup':'noChoseSetup'}}" bindtap="changeMonthAge" >月</view>
+            <view class="{{timeClass===2?'choseSetup':'noChoseSetup'}}" bindtap="changeYearAge">年</view>
+        </view>
+    </view>
+
+    <view class="allDataNum">
+        <view>
+            <view>总{{isExpend?'支出':'收入'}}:  {{weekBillNum}}</view>
+            <view>平均{{isExpend?'支出':'收入'}}:  {{dayBillNum}}</view>
+        </view>
+    </view>
+
+    <view class="billImage" >
+        <view wx:for="{{showBillData}}" wx:key="dayNum" bindtap="changeIsShow" data-index="{{index}}" >
+            <view>
+                <view style="bottom:{{item.height}}rpx" ></view>
+                <view style="height:{{item.height}}rpx" wx:if="{{item.isShow}}" ></view>
+                <view class="show" wx:if="{{item.isShow}}" style="bottom:{{item.height}}rpx" >{{isExpend?'支出':'收入'}}:{{item.num}}</view>
+            </view>
+            <view>
+                {{item.dayNum}}
+            </view>
+        </view>
+        <view class="lineBox" wx:for="{{showBillLine}}"  > 
+            <view style="left:{{item.left}}rpx;bottom:{{item.bottom}}rpx;height:{{item.height}}rpx;transform: rotate({{item.deg}}deg)" ></view>
+        </view>
+    </view>
+
+    <view class="rankingListBox"  >
+        <view>
+            {{isExpend?'支出':'收入'}}排行榜
+        </view>
+        <view wx:for="{{billRanking}}" key="type" wx:if="{{isHaveData}}">
+            <view>
+                <view>
+                    <image src="../../resource/image/static/yellow_{{item.type}}.png" />
+                </view>
+            </view>
+            <view>
+                <view>
+                    <text>{{item.name}}</text>
+                    <text>{{item.percent}}</text>
+                    <text>{{item.num}}</text>
+                </view>
+                <view>
+                    <view style="width:{{item.width}}rpx" ></view>
+                </view>
+            </view>
+        </view>
+
+        
+    </view>
+    <view class="err">
+        暂无数据
+    </view>
+</view>

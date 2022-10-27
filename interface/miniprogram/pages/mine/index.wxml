@@ -1,0 +1,125 @@
+<TopTabbar  text="个人中心" />
+<setBudgetInput wx:if="{{isSetupBudget}}" bind:changeSetupBudgetAgeHandler="changeSetupBudgetAge" bind:changUserBudgetAgeHandler="changUserBudgetAge" />
+<view class="userMessageBox" style="margin-top: {{boxHeight}}px;" >
+    <view class="userMessage" >
+        <view class="userMessageMain">
+            <view class="userAge" bindtap="{{!isLogin?'userLogin':''}}" >
+                <view><image src="{{isLogin?userInfo.avatarUrl:'../../resource/image/static/noLoginImage.jpg'}}" /></view>
+                <view><text>{{isLogin?userInfo.nickName:"点击登陆"}}</text></view>
+            </view>
+            <view class="userClock">
+                <view class="userClockButton" bindtap="{{isClock?'':'userClock'}}" >
+                    <view wx:if="{{!isClock}}" ><image src="../../resource/image/static/userClockButtonImage.png" /></view>
+                    <view class="{{isClock?'isClock':''}}" ><text>{{isClock?'已打卡':'打卡'}}</text></view>
+                </view>
+            </view>
+        </view>
+        <view class="userMessageFooter">
+            <view>
+                <view>{{continuousClockDay}}</view>
+                <view>已连续打卡</view>
+            </view>
+            <view>
+                <view>{{useDayCount}}</view>
+                <view>记账总天数</view>
+            </view>
+            <view>
+                <view>{{totalNumBill}}</view>
+                <view>记账总比数</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="userBillData" >
+        <view class="userBillDataHeader">
+            <view>
+                <text>账单</text>
+            </view>
+            <view>
+                <image src="../../resource/image/static/leftArrow.png" />
+            </view>
+        </view>
+        <view class="userBillDataFooter">
+            <view class="userBillDataMonth">
+               <span>
+                <text>09</text><text>月</text>
+               </span>
+            </view>
+            <view class="userBillDataAge">
+                <view>
+                    <view>
+                        <text>收入</text>
+                    </view>
+                    <view>
+                        <span><text>{{userIncome[0]}}</text><text>.{{userIncome[1]}}</text></span>
+                    </view>
+                </view>
+                <view>
+                    <view>
+                        <text>支出</text>
+                    </view>
+                    <view>
+                        <span><text>{{userExpend[0]}}</text><text>.{{userExpend[1]}}</text></span>
+                    </view>
+                </view>
+                <view>
+                    <view>
+                        <text>结余</text>
+                    </view>
+                    <view>
+                        <span><text>{{userBalance[0]}}</text><text>.{{userBalance[1]}}</text></span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="userBillBudgetBox" >
+        <view class="userBillBudgetSetUp">
+            <view>
+                <text>09</text>月总预算
+            </view>
+            <view>
+                <view class="setUpButton" bindtap="changeSetupBudgetAge" >
+                    <text>+</text><text decode="{{true}}">&nbsp;设置预算</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="userBillBudgetData">
+            <view class="userBillBudgetImage">
+                <view>
+                    <view class="left" >
+                    <view style="transform: rotate(-{{leftImageRotate}}deg);background-color:{{leftImageRotate==='180'?'#e6e8e7':'#fddd2d'}}" ></view>
+                </view>
+                <view class="right" >
+                    <view style="transform: rotate(-{{rightImageRotate}}deg);"></view>
+                </view>
+                <view class="userBillBudgetMessage">
+                    <text>剩余</text>
+                    <text>{{userRemainderPercent}}%</text>
+                </view>
+               </view>
+            </view>
+
+            <view class="userBillBudgetData">
+                <view>
+                    <view><text>剩余预算:</text></view>
+                    <view>{{userRemainder}}</view>
+                </view>
+                <view>
+                    <view><text>本月预算:</text></view>
+                    <view>{{userBudget}}</view>
+                </view>
+                <view>
+                    <view><text>本月支出:</text></view>
+                    <view>{{userExpend}}</view>
+                </view>
+            </view>
+            
+        </view>
+    </view>
+    <view class="feedbackMessageButton" bindtap="goLeaving" >
+        反馈留言
+    </view>
+</view>

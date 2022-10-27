@@ -1,0 +1,258 @@
+@import "../../app.scss";
+$backgroundColor: #fddd2d;
+
+.classificationBox {
+    background-color: #fddd2d;
+    @include flexBoxLayout;
+    flex-direction: row;
+    height: 130rpx;
+
+    .choseSetup {
+        background-color: #323232;
+        color: $backgroundColor;
+    }
+
+    .noChoseSetup {
+        background-color: $backgroundColor;
+        color: #323232;
+    }
+
+    >view:nth-child(1) {
+        width: 40%;
+        height: 100%;
+        @include flexBoxLayout;
+        flex-direction: row;
+
+
+        >view {
+            @include flexBoxLayout;
+            width: 40%;
+            height: 60%;
+            border: 1rpx solid #323232;
+            font-size: 25rpx;
+        }
+
+        >view:nth-child(1) {
+            border-radius: 15rpx 0 0 15rpx;
+        }
+
+        >view:nth-child(2) {
+            border-radius: 0 15rpx 15rpx 0;
+        }
+    }
+
+    >view:nth-child(2) {
+        width: 60%;
+        height: 100%;
+        @include flexBoxLayout;
+        flex-direction: row;
+
+        >view {
+            @include flexBoxLayout;
+            border: 1rpx solid #323232;
+            font-size: 25rpx;
+            width: 30%;
+            height: 60%;
+        }
+
+        >view:nth-child(1) {
+            border-radius: 15rpx 0 0 15rpx;
+            border-right: none;
+        }
+
+        >view:nth-child(3) {
+            border-radius: 0 15rpx 15rpx 0;
+            border-left: none;
+        }
+    }
+}
+
+.allDataNum {
+    @include flexBoxLayout;
+    height: 130rpx;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: flex-start;
+    border-bottom: 1rpx solid rgba(128, 128, 128, 0.5);
+
+    >view:nth-child(1) {
+        @include flexBoxLayout;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 80rpx;
+        font-size: 23rpx;
+    }
+}
+
+.billImage {
+    @include flexBoxLayout;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    height: 350rpx;
+    position: relative;
+    left: 50%;
+    margin-top: 20rpx;
+    transform: translateX(-50%);
+    font-weight: bolder;
+
+    >view {
+        flex: 1;
+    }
+
+    >view {
+        >view:nth-child(1) {
+            width: 100%;
+            height: 300rpx;
+            position: relative;
+
+            >view:nth-child(1) {
+                background-color: white;
+                width: 16rpx;
+                height: 16rpx;
+                border-radius: 50%;
+                border: 1px solid black;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -8rpx;
+                z-index: 200;
+            }
+
+            >view:nth-child(2) {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                width: 1rpx;
+                background-color: rgba(128, 128, 128, 0.4);
+                z-index: 100;
+            }
+        }
+
+        >view:nth-child(2) {
+            @include flexBoxLayout;
+            width: 100%;
+            height: 50rpx;
+            font-size: 20rpx;
+            justify-content: flex-start;
+            border-top: 1px solid rgba(128, 128, 128, 0.4);
+            padding-top: 10rpx;
+        }
+
+        .show{
+          @include flexBoxLayout;
+          background-color: black;
+          color: white;
+          position: absolute;
+          width: 100rpx;
+          height: 40rpx;
+          bottom: 0;
+          left: 28rpx;
+          font-size: 20rpx;
+          z-index: 10000;
+        }
+    }
+
+    .lineBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300rpx;
+
+        >view:nth-child(1) {
+            position: absolute;
+            width: 1rpx;
+            background-color: black;
+            transform-origin: bottom;
+        }
+    }
+}
+
+.rankingListBox {
+    margin-top: 30rpx;
+
+    >view:nth-child(1) {
+        @include flexBoxLayout;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 10rpx;
+        height: 80rpx;
+        font-size: 23rpx;
+        padding-left: 40rpx;
+        border-top: 1rpx solid rgba(128, 128, 128, 0.5);
+    }
+
+    >view:nth-child(n+2) {
+        @include flexBoxLayout;
+        flex-direction: row;
+        height: 130rpx;
+        justify-content: flex-start;
+
+        >view:nth-child(1) {
+            @include flexBoxLayout;
+            width: 20%;
+            height: 130rpx;
+
+            >view {
+                @include flexBoxLayout;
+                width: 70rpx;
+                height: 70rpx;
+                background-color: #f5f5f5;
+                border-radius: 50%;
+
+                >image {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+        }
+
+        >view:nth-child(2) {
+            flex: 1;
+            height: 130rpx;
+
+            >view:nth-child(1) {
+                @include flexBoxLayout;
+                flex-direction: row;
+                justify-content: flex-start;
+                height: 40%;
+                font-size: 25rpx;
+                font-weight: bolder;
+
+                >text:nth-child(2) {
+                    margin-left: 30rpx;
+                }
+
+                >text:nth-child(3) {
+                    position: absolute;
+                    left: 82%;
+                }
+            }
+
+            >view:nth-child(2) {
+                height: 60%;
+                border-bottom: 1rpx solid rgba(128, 128, 128, 0.3);
+
+                >view {
+                    position: relative;
+                    top: 10rpx;
+                    width: 200rpx;
+                    height: 20rpx;
+                    background-color: $backgroundColor;
+                    border-radius: 10rpx;
+                }
+            }
+        }
+    }
+}
+
+.err {
+    @include flexBoxLayout;
+    height: 400rpx;
+    font-size: 20rpx;
+    color: rgba(128, 128, 128, 0.7);
+}

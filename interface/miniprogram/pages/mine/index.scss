@@ -1,0 +1,403 @@
+@import "../../app.scss";
+$backgroundColor: #fddd2d;
+
+page {
+    background-color: #f6f6f6;
+}
+
+.userMessageBox {
+    .userMessage {
+        background-color: $backgroundColor;
+        height: 420rpx;
+        width: 100%;
+        border-radius: 0 0 20% 20%;
+        overflow: hidden;
+
+        .userMessageMain {
+            @include flexBoxLayout;
+            position: relative;
+            width: 93%;
+            height: 130rpx;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30rpx;
+            flex-direction: row;
+
+            >view {
+                width: 50%;
+                height: 100%;
+            }
+
+            .userAge {
+                @include flexBoxLayout;
+                flex-direction: row;
+
+                >view:nth-child(1) {
+                    width: 40%;
+                    height: 100%;
+                    @include flexBoxLayout;
+
+                    >image {
+                        width: 120rpx;
+                        height: 120rpx;
+                        border-radius: 50%;
+                        border: 3rpx solid white;
+                    }
+                }
+
+                >view:nth-child(2) {
+                    flex: 1;
+
+                    >text {
+                        font-weight: bolder
+                    }
+                }
+            }
+
+            .userClock {
+                @include flexBoxLayout;
+                align-items: flex-end;
+
+                .userClockButton {
+                    @include flexBoxLayout;
+                    flex-direction: row;
+                    width: 150rpx;
+                    height: 60rpx;
+                    background-color: white;
+                    margin-right: 10rpx;
+                    border-radius: 50rpx;
+
+                    >view:nth-child(1) {
+                        @include flexBoxLayout;
+                        width: 60%;
+                        height: 100%;
+
+                        >image {
+                            width: 55rpx;
+                            height: 55rpx;
+                        }
+                    }
+
+                    >view:nth-child(2) {
+                        @include flexBoxLayout;
+                        width: 50%;
+                        align-items: flex-start;
+                        font-size: 25rpx;
+                        font-weight: bold;
+                    }
+
+                    .isClock {
+                        @include flexBoxLayout;
+                        width: 50%;
+                        font-size: 25rpx;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+
+        .userMessageFooter {
+            @extend .userMessageMain;
+            @include flexBoxLayout;
+            flex-direction: row;
+            margin-top: 30rpx;
+            height: 100rpx;
+
+            >view {
+                @include flexBoxLayout;
+
+                >view {
+                    @include flexBoxLayout;
+                    width: 100%;
+                    height: 50%;
+                }
+
+                >view:nth-child(1) {
+                    font-weight: bolder;
+                    font-size: 40rpx;
+                }
+
+                >view:nth-child(2) {
+                    font-size: 23rpx;
+                    color: grey;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}
+
+.userBillData {
+    width: 93%;
+    height: 200rpx;
+    background-color: white;
+    position: relative;
+    top: -120rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20rpx;
+
+    .userBillDataHeader {
+        @include flexBoxLayout;
+        flex-direction: row;
+        height: 70rpx;
+
+        >view:nth-child(1) {
+            @include flexBoxLayout;
+            align-items: flex-start;
+            width: 30%;
+
+            >text {
+                margin-left: 20rpx;
+                font-weight: bolder;
+                font-size: 27rpx;
+            }
+        }
+
+        >view:nth-child(2) {
+            @include flexBoxLayout;
+            flex: 1;
+            align-items: flex-end;
+
+            >image {
+                width: 27rpx;
+                height: 27rpx;
+                margin-right: 20rpx;
+            }
+        }
+    }
+
+    .userBillDataFooter {
+        @include flexBoxLayout;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 120rpx;
+
+        .userBillDataMonth {
+            width: 17%;
+            border-right: 1rpx solid grey;
+            box-sizing: border-box;
+            height: 45rpx;
+            line-height: 45rpx;
+            margin-left: 20rpx;
+
+            >span {
+                >text:nth-child(1) {
+                    font-size: 45rpx;
+                }
+
+                >text:nth-child(2) {
+                    font-size: 25rpx;
+                }
+            }
+
+        }
+
+        .userBillDataAge {
+            @include flexBoxLayout;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 70%;
+            height: 100%;
+
+            >view {
+                flex: 1;
+                @include flexBoxLayout;
+                height: 100%;
+
+                >view {
+                    @include flexBoxLayout;
+                    font-size: 25rpx;
+                    width: 100%;
+                    height: 40%;
+                }
+
+
+                >view:nth-child(1)>text {
+                    color: grey;
+                }
+
+                >view:nth-child(2)>span>text:nth-child(1) {
+                    font-size: 35rpx;
+                }
+            }
+        }
+    }
+}
+
+.userBillBudgetBox {
+    @extend .userBillData;
+    top: -90rpx;
+    height: 300rpx;
+
+    .userBillBudgetSetUp {
+        @include flexBoxLayout;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 70rpx;
+
+        >view:nth-child(1) {
+            width: 30%;
+            height: 100%;
+            @include flexBoxLayout;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-left: 20rpx;
+            font-size: 29rpx;
+            font-weight: bolder;
+        }
+
+        >view:nth-child(2) {
+            flex: 1;
+            @include flexBoxLayout;
+            align-items: flex-end;
+            height: 100%;
+
+            .setUpButton {
+                @include flexBoxLayout;
+                flex-direction: row;
+                width: 160rpx;
+                height: 80%;
+                background-color: $backgroundColor ;
+                margin-right: 20rpx;
+                font-size: 25rpx;
+                font-weight: bolder;
+                border-radius: 25rpx;
+
+                >text:nth-child(1) {
+                    margin-bottom: 5rpx;
+                    font-size: 35rpx;
+                }
+            }
+        }
+    }
+
+    .userBillBudgetData {
+        @include flexBoxLayout;
+        width: 100%;
+        height: 230rpx;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        .userBillBudgetImage {
+            @include flexBoxLayout;
+            width: 35%;
+            height: 100%;
+            flex-direction: row;
+            position: relative;
+
+
+            >view {
+                @include flexBoxLayout;
+                flex-direction: row;
+                width: 206rpx;
+                height: 90%;
+                border-radius: 50%;
+                background-color: #e6e8e7;
+
+                >view {
+                    width: 50%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .left {
+                    border-radius: 100rpx 0 0 100rpx;
+                    overflow: hidden;
+
+                    >view {
+                        @extend.left;
+                        background-color: $backgroundColor;
+                        width: 100%;
+                        height: 100%;
+                        transform-origin: 103.5rpx 104rpx;
+                    }
+                }
+
+                .right {
+                    border-radius: 0 100rpx 100rpx 0;
+                    overflow: hidden;
+                    position: relative;
+                    right: 1rpx;
+
+                    >view {
+                        @extend.right;
+                        background-color: $backgroundColor;
+                        width: 100%;
+                        height: 100%;
+                        transform-origin: 0 104rpx;
+                    }
+                }
+            }
+
+
+
+            .userBillBudgetMessage {
+                @include flexBoxLayout;
+                background-color: white;
+                width: 170rpx;
+                height: 170rpx;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 10;
+
+                >text:nth-child(1) {
+                    font-size: 25rpx;
+                    color: grey;
+                    margin-bottom: 15rpx;
+                }
+
+                >text:nth-child(2) {
+                    font-size: 40rpx;
+                }
+            }
+        }
+
+        .userBillBudgetData {
+            @include flexBoxLayout;
+            width: 50%;
+            height: 80%;
+            margin-left: 75rpx;
+
+            >view {
+                @include flexBoxLayout;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 100%;
+
+
+                >view:nth-child(2) {
+                    flex: 1;
+                    @include flexBoxLayout;
+                    align-items: flex-end;
+                }
+            }
+
+            >view:nth-child(1) {
+                height: 40%;
+                font-size: 30rpx;
+                border-bottom: 1px solid #e6e8e7;
+            }
+
+            >view:nth-child(2),
+            view:nth-child(3) {
+                height: 30%;
+                font-size: 21rpx;
+            }
+        }
+    }
+}
+
+.feedbackMessageButton {
+    background-color: $backgroundColor;
+    @include flexBoxLayout;
+    position: relative;
+    bottom: 50rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100rpx;
+    font-size: 23rpx;
+    font-weight: bolder;
+    border-radius: 40rpx;
+}

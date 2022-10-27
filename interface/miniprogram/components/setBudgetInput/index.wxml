@@ -1,0 +1,17 @@
+<!--components/setBudgetInput/index.wxml-->
+<view class="setBudgetInputBox">
+    <view class="setBudgetInputUserHandler" >
+        <view>
+            每月总预算
+        </view>
+        <form bindsubmit="submitUserBudget" >
+            <view class="setBudgetInput" >
+                <input type="number" auto-focus placeholder="输入设置金额" name="setBudgetInput" />
+            </view>
+            <view class="setBudgetInputButton" >
+                <view bindtap="changeSetupBudgetAge" >取消</view>
+                <view>确认<button form-type="submit" plain ></button></view>
+            </view>
+        </form>
+    </view>
+</view>

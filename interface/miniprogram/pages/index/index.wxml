@@ -1,0 +1,44 @@
+<!--pages/index/index.wxml-->
+<!-- 首页 -->
+<!-- 导航栏组件 -->
+<TopTabbar  text="首页" />
+<noDataPrompt wx:if="{{!isHasData}}" />
+<view style="margin-top:{{boxHeight}}px" >
+    <view  class="timebarBox" >
+        <picker style="height:100%" mode="date" fields="month" bindchange="dataPickerHandler" >
+            <view class="pickerTime">
+                <view>{{time[0]}}</view>
+                <view>{{time[1]}} 
+                    <text style="font-size:25rpx;margin-bottom:5rpx" >月</text> 
+                    <text style="margin-left:10rpx;font-size:35rpx;font-weight:bolder" >∨</text> 
+                </view>
+            </view>
+        </picker>
+        <view>
+        <view>收入</view>
+            <view>{{monthExpend[0]}}.<text style="font-size:35rpx;padding-bottom:1rpx" >{{monthExpend[1]}}</text></view>
+        </view>
+        <view>
+            <view>支出</view>
+            <view>{{monthIncome[0]}}.<text style="font-size:35rpx;padding-bottom:1rpx" >{{monthIncome[1]}}</text></view>
+        </view>
+    </view>
+
+    <view class="billDataBox" wx:if="{{isHasData}}" >
+        <view class="billDatapart" wx:for="{{billDayData}}" wx:key="day" >
+            <view>
+                <view>{{time[1]}}月{{item.day}}日 星期{{item.dayName}}</view> 
+                <view class="{{item.expend==='0'?'none':item.income==='0'?'only':''}}">支出:{{item.expend}}</view>
+                <view class="{{item.income==='0'?'none':item.expend==='0'?'only':''}}">收入:{{item.income}}</view>
+            </view>
+            <view wx:for="{{item.data}}"  >
+                <view>
+                    <view><image src="../../resource/image/static/yellow_{{item.type}}.png" /></view>
+                </view>
+                <view>{{item.text!==''?item.text:item.name}}</view>
+                <view>{{item.isExpend?'-':'+'}}{{item.submitNum}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+

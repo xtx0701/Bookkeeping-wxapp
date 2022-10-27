@@ -1,0 +1,16 @@
+<view class="setBudgetInputBox">
+    <view class="setBudgetInputUserHandler" >
+        <view>
+            分类预算
+        </view>
+        <form bindsubmit="changeUserClassificationAge" >
+            <view class="setBudgetInput" >
+                <input type="number" auto-focus placeholder="输入设置金额" name="setBudgetInput" />
+            </view>
+            <view class="setBudgetInputButton" >
+                <view bindtap="changAddClassificationAge" >取消</view>
+                <view>确认<button form-type="submit" plain ></button></view>
+            </view>
+        </form>
+    </view>
+</view>
